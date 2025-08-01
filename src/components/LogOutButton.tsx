@@ -14,8 +14,8 @@ function LogOutButton() {
         setLoading(true);
 
         await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a logout delay
-        const errorMessage = "Could not access the server. Please try again later."; // Simulated error message
-
+        const errorMessage = null;
+        
         if (!errorMessage)  {
             toast.success("Logged out successfully!");
             router.push("/");
