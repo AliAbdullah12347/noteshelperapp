@@ -3,9 +3,10 @@ import { shadow } from "@/app/styles/utils";
 import { Button } from "@/components/ui/button";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import LogOutButton from "@/components/LogOutButton";
+import { getUser } from "@/auth/server";
 
-function Header() {
-    const user = 1; // Replace with actual user state if needed
+async function Header() {
+    const user = await getUser(); // Replace with actual user state if needed
   return (
     <header className="relative flex h-24 w-full items-center justify-between bg-popover"
     style={{

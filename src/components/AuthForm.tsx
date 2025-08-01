@@ -8,6 +8,9 @@ import { useTransition } from "react";
 import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import { error } from "console";
+import { toast } from "sonner";
+import { LoginAction, SignUpAction } from "@/actions/users"; // Assuming these actions are defined in your project
 
 type Props = {
   type: "login" | "SignUp";
@@ -21,10 +24,34 @@ function AuthForm({ type }: Props) {
  
     const handleSubmit = (formData: FormData) => {
         
-        // Handle form submission logic here
-        console.log(`${isLoginForm ? "Logging in" : "Registering"}...`);
-        // Simulate a successful login or registration
-        router.push("/"); // Redirect to dashboard after successful login/registration
+        startTransition(async () => {
+          const email = formData.get("email") as string;
+          const password = formData.get("password") as string;
+
+          let errorMessage;
+          let title;
+          let description;
+          
+          if (isLoginForm) {
+            const result = (await LoginAction(email, password));
+            errorMessage = result?.errorMessage;
+            title = "Logged in";
+            description = "You have successfully logged in.";
+          }
+          else {
+            const result = (await SignUpAction(email, password));
+            errorMessage = result?.errorMessage;
+            title = "Signed up";
+            description = "Check your email for a confirmation link.";
+          }
+
+          if (!errorMessage) {
+            toast.success(title + description);
+            router.replace("/");
+          } else {
+            toast.error("Error " + errorMessage);
+          }
+        })
     };
 
     return (

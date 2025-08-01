@@ -4,6 +4,8 @@ import { Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { LogOutAction } from "@/actions/users"; // Assuming this action is defined in your project
+
 
 function LogOutButton() {
     
@@ -13,9 +15,9 @@ function LogOutButton() {
     const handleLogOut = async () => {
         setLoading(true);
 
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a logout delay
-        const errorMessage = null;
-        
+        const result = await LogOutAction();
+        const errorMessage = result?.errorMessage;
+
         if (!errorMessage)  {
             toast.success("Logged out successfully!");
             router.push("/");
