@@ -1,6 +1,6 @@
 function HomePage() {
   return (
-    <div className="bg-red-100  items-center justify-center text-center tex-blue-300 h-20">
+    <div className="bg-red-100 justify-center text-center text-blue-300 h-20">
       <h1>Welcome to NotesHelperApp</h1>
       <p>Your personal note-taking assistant.</p>
     </div>
