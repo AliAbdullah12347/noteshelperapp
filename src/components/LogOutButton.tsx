@@ -21,7 +21,7 @@ function LogOutButton() {
             router.push("/");
         }
         else {
-            toast.error("Logout failed:", errorMessage);
+            toast.error("Logout failed:");
             setLoading(false);
         }
         
