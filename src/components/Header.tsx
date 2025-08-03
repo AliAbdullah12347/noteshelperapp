@@ -26,7 +26,7 @@ async function Header() {
         (
         <>
             <Button asChild>
-            <Link href="/signup" className="hidden sm:block">Sign Up</Link>
+            <Link href="/Sign-up" className="hidden sm:block">Sign Up</Link>
             </Button>
 
             <Button asChild variant={"outline"}>
