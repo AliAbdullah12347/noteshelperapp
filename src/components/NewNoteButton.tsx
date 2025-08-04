@@ -12,13 +12,13 @@ import { createNoteAction } from "@/actions/notes";
 
 type Props = {
     user: User | null; 
-    
 };
 
 
 
 function NewNoteButton({ user }: Props) {
     const router = useRouter();
+
     const [loading, setLoading] = useState(false);
     
     const handleClickNewNoteButton = async () => {
@@ -27,10 +27,19 @@ function NewNoteButton({ user }: Props) {
         }
         else {
             setLoading(true);
+            toast("Saving current note before creating a new one...");
             // Logic to create a new note goes here
-            await new Promise((resolve) => setTimeout(resolve, debounceTimeout + 500)); // Simulating a delay for note creation
+
+            await new Promise((resolve) => 
+                setTimeout(resolve, debounceTimeout + 500),
+            ); 
+        
+            // Simulating a delay for note creation
+            
             const uuid = uuidv4(); // Generate a unique ID for the new note
+            
             await createNoteAction(uuid); // Assuming createNoteAction is defined to handle note creation
+            
             router.push(`/?noteId=${uuid}`); // Redirect to the new note page
 
             toast.success("New note created successfully!");

@@ -14,6 +14,9 @@ export const LoginAction = async (email: string, password: string) => {
         if (error) {
             throw error;
         }
+        //const dbUser = await prisma.user.findUnique({
+        //    where: { id: email }, // or use user.email
+        //});
 
         return { errorMessage: null };
     } catch (error) {   
