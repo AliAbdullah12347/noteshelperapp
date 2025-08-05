@@ -45,7 +45,7 @@ function AuthForm({ type }: Props) {
             description = "Check your email for a confirmation link.";
           }
 
-          if (!errorMessage) {
+          if (errorMessage === null) {
             toast.success(title + description);
             router.replace("/");
           } else {
