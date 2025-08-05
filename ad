@@ -1,0 +1,96 @@
+[33mcommit 855ccc66652e58693d5c2963dab60492d98e0a7a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Mon Aug 4 14:58:50 2025 -0400
+
+    Completed the sidebar, added note traversal and note searching feature
+
+[33mcommit e9f628f0ae285da52edd7f0af7b940f76808df40[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Mon Aug 4 14:35:43 2025 -0400
+
+    Completed note updating, creation, and online saving capabilities
+
+[33mcommit 50dba3321833752083319088149d9a396758728c[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sun Aug 3 06:53:01 2025 -0400
+
+    Added New Note creation capabilities
+
+[33mcommit 37538b1c3c9832b22031a275886c3cc253490386[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sun Aug 3 06:34:39 2025 -0400
+
+    Added note writing functionality along with some other stuff, figured out most of the layout, left to add additional functionality
+
+[33mcommit b447caae39c1cdec3a51bd68a87bcbbb6e76605f[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sun Aug 3 02:36:20 2025 -0400
+
+    Added sidebar
+
+[33mcommit 03e1e9a3c8d42658658a8f009d0e46baf0d15b54[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sat Aug 2 20:01:43 2025 -0400
+
+    added prisma orm code for added security of users
+
+[33mcommit 7c8723390a594d5f934f9ee1888dabe301131c8a[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Fri Aug 1 04:37:16 2025 -0400
+
+    Got the authentication and login, logout, register workinng in real time with email authentication and serverside session tracking. Basically, a solid foundation for any web apps I want to make in the future
+
+[33mcommit 5f71793a92d2152d5a769e516790c6572b9e035f[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Fri Aug 1 03:06:55 2025 -0400
+
+    Cleaned up login and sign-up pages, working on setting up Supabase API connection for Further authorization as well as for the database
+
+[33mcommit e78d404c966734c095e78a1d1010cf5f0810994f[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Fri Aug 1 01:23:49 2025 -0400
+
+    added a preliminary login page
+
+[33mcommit be855f30428cce8a530a16af451d3ae0932243fa[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Fri Aug 1 01:02:17 2025 -0400
+
+    Minor Correction
+
+[33mcommit 4968b3f13cf0ee1000d83bb8284d9bb4d246ccaf[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Fri Aug 1 01:01:21 2025 -0400
+
+    Pretty much completed the header, played around with login logout functionality
+
+[33mcommit eff34e0e2ba58821ef690818326ce04175dbccc2[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sat Jul 19 11:11:12 2025 -0400
+
+    configured eslint to allow for apostrophes in case needed
+
+[33mcommit 67bccf49ff5b088aca1319b7b0a3728bda81027b[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sat Jul 19 11:06:58 2025 -0400
+
+    Some minor changes, added some features and basic testing
+
+[33mcommit 21ada7f1fde851023702791c56a2eea67439d9d7[m
+Merge: b531954 430ca7c
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sat Jul 19 10:52:37 2025 -0400
+
+    resolved readme.md merge conflict
+
+[33mcommit b531954b4394b13a5b5f0d5031c5b8dc58fd3f8f[m
+Author: Ali Abdullah <aliabdullah12347@gmail.com>
+Date:   Sat Jul 19 10:46:12 2025 -0400
+
+    Very Basic initial commit just to get the project started: set up Next.js, Tailwind, ShadCN, and basic layout while cleaning up some things
+
+[33mcommit 430ca7c9428b2afd1eb0b2a7e817c6e34828eea7[m
+Author: AliAbdullah12347 <113260319+AliAbdullah12347@users.noreply.github.com>
+Date:   Sat Jul 19 10:44:13 2025 -0400
+
+    Initial commit
