@@ -57,8 +57,8 @@ A modern, full-stack note-taking application with AI summarization capabilities.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/notes-ai-app.git
-cd notes-ai-app
+git clone https://github.com/AliAbdullah12347/noteshelperapp
+cd noteshelperapp
 ```
 
 ### 2. Install Dependencies
@@ -93,7 +93,7 @@ Go to [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🤖 Switching to Google Gemini (Free AI Alternative)
 
-If you want to avoid OpenAI's billing, you can:
+If you want to avoid OpenAI's billing, you can do what I did:
 
 1. Set up a Google Cloud Project and enable the **Generative Language API**
 2. Create an API key and restrict it as needed
