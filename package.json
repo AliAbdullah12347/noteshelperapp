@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma db push --schema=./src/db/schema.prisma && prisma generate --schema=./src/db/schema.prisma && next build",
+    "build": "pnpm prisma db push --schema=./src/db/schema.prisma && pnpm prisma generate --schema=./src/db/schema.prisma && next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "prisma generate --schema=./src/db/schema.prisma && prisma migrate dev --schema=./src/db/schema.prisma"
+    "migrate": "pnpm prisma generate --schema=./src/db/schema.prisma && pnpm prisma migrate dev --schema=./src/db/schema.prisma"
   },
   "prisma": {
     "schema": "src/db/schema.prisma"
