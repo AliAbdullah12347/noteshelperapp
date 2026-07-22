@@ -1,12 +1,22 @@
 import AuthForm from "@/components/AuthForm";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { NotebookPen } from "lucide-react";
 
 function LoginPage() {
   return (
-    <div className="mt-20 flex flex-1 flex-col items-center">
-      <Card className="w-full max-w-md">
-        <CardHeader className="mb-4">
-          <CardTitle className="text-center text-3xl">Login</CardTitle>
+    <div className="relative flex min-h-[calc(100vh-8rem)] flex-1 flex-col items-center justify-center py-12">
+      {/* Background Glow Halo */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 rounded-full bg-gradient-to-tr from-indigo-600/20 to-purple-600/20 blur-3xl pointer-events-none" />
+
+      <Card className="glass-card relative z-10 w-full max-w-md rounded-3xl border-border/60 p-2 shadow-2xl">
+        <CardHeader className="text-center pb-2">
+          <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-500/25">
+            <NotebookPen className="size-6" />
+          </div>
+          <CardTitle className="text-2xl font-bold tracking-tight">Welcome Back</CardTitle>
+          <CardDescription className="text-xs text-muted-foreground">
+            Sign in to access your notes and AI assistant
+          </CardDescription>
         </CardHeader>
 
         <AuthForm type="login" />
@@ -16,50 +26,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
-
-/*
-function LoginPage () {
-  return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6">Login</h1>
-        <form>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
-              required
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200"
-          >
-            Login
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-
-}
-
-export default LoginPage;
-
-*/

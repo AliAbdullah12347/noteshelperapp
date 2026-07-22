@@ -2,63 +2,59 @@
 
 import { User } from "@supabase/supabase-js";
 import { Button } from "./ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, Plus } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {v4 as uuidv4} from "uuid"; // Assuming you want to generate a unique ID for the new note
+import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
 import { debounceTimeout } from "@/lib/constants";
 import { createNoteAction } from "@/actions/notes";
 
 type Props = {
-    user: User | null; 
+  user: User | null;
 };
 
-
-
 function NewNoteButton({ user }: Props) {
-    const router = useRouter();
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
-    const [loading, setLoading] = useState(false);
-    
-    const handleClickNewNoteButton = async () => {
-        if (!user) {
-            router.push("/login");
-        }
-        else {
-            setLoading(true);
-            toast("Saving current note before creating a new one...");
-            // Logic to create a new note goes here
+  const handleClickNewNoteButton = async () => {
+    if (!user) {
+      router.push("/login");
+    } else {
+      setLoading(true);
+      toast("Creating a new note...");
 
-            await new Promise((resolve) => 
-                setTimeout(resolve, debounceTimeout + 500),
-            ); 
-        
-            // Simulating a delay for note creation
-            
-            const uuid = uuidv4(); // Generate a unique ID for the new note
-            
-            await createNoteAction(uuid); // Assuming createNoteAction is defined to handle note creation
-            
-            router.push(`/?noteId=${uuid}`); // Redirect to the new note page
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceTimeout + 200),
+      );
 
-            toast.success("New note created successfully!");
-            setLoading(false);
-        }
+      const uuid = uuidv4();
+      await createNoteAction(uuid);
+
+      router.push(`/?noteId=${uuid}`);
+      toast.success("New note created!");
+      setLoading(false);
     }
-        
-    console.log(user?.email);
-    return (
-        <Button
-        onClick={handleClickNewNoteButton}
-        variant="secondary"
-        className="w-24"
-        disabled={loading}>
+  };
 
-        {loading ? <Loader2 className="animate-spin" /> : "New Note"}
-        
-        </Button>
-    );
+  return (
+    <Button
+      onClick={handleClickNewNoteButton}
+      variant="outline"
+      className="h-9 px-4 text-xs font-semibold gap-1.5 rounded-xl border-border/60 hover:bg-muted/80 hover:border-indigo-500/30 transition-all"
+      disabled={loading}
+    >
+      {loading ? (
+        <Loader2 className="size-4 animate-spin text-indigo-500" />
+      ) : (
+        <>
+          <Plus className="size-4 text-indigo-500" />
+          <span>New Note</span>
+        </>
+      )}
+    </Button>
+  );
 }
 
 export default NewNoteButton;

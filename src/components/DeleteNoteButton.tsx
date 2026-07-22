@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -36,7 +35,6 @@ function DeleteNoteButton({ noteId, deleteNoteLocally }: Props) {
 
       if (!errorMessage) {
         toast.success("Note deleted successfully!");
-
         deleteNoteLocally(noteId);
 
         if (noteId === noteIdParam) {
@@ -47,33 +45,37 @@ function DeleteNoteButton({ noteId, deleteNoteLocally }: Props) {
       }
     });
   };
+
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button
-          className="absolute right-2 top-1/2 size-7 -translate-y-1/2 p-0 opacity-0 group-hover/item:opacity-100 [&_svg]:size-3"
+          className="absolute right-2 top-2.5 size-6 p-0 opacity-0 group-hover/item:opacity-100 hover:bg-destructive/10 hover:text-destructive text-muted-foreground transition-all duration-200"
           variant="ghost"
+          size="icon"
+          title="Delete note"
         >
-          <Trash2 />
+          <Trash2 className="size-3.5" />
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="glass-card rounded-2xl max-w-md border-border/60">
         <AlertDialogHeader>
-          <AlertDialogTitle>
-            Are you sure you want to delete this note?
+          <AlertDialogTitle className="text-lg font-bold">
+            Delete this note?
           </AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your note
-            from our servers.
+          <AlertDialogDescription className="text-xs text-muted-foreground">
+            This note will be permanently removed from your account. This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogFooter className="gap-2 sm:gap-0 mt-2">
+          <AlertDialogCancel className="rounded-xl text-xs h-9">
+            Cancel
+          </AlertDialogCancel>
           <AlertDialogAction
             onClick={handleDeleteNote}
-            className="bg-destructive text-destructive-foreground hover:bg-destructive/90 w-24"
+            className="rounded-xl text-xs h-9 bg-destructive text-destructive-foreground hover:bg-destructive/90 min-w-20"
           >
-            {isPending ? <Loader2 className="animate-spin" /> : "Delete"}
+            {isPending ? <Loader2 className="size-4 animate-spin" /> : "Delete"}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
